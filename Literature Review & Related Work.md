@@ -1,28 +1,26 @@
 Literature Review / Relevant Studies
 
-1. Metal Detection Techniques
-Conventional metal detection techniques are highly dependent on Very Low Frequency (VLF) or Pulse Induction (PI) techniques. These techniques utilize amplitudes in electromagnetic fields to identify sub-surface metal objects. While they are efficient in uncomplicated environments, these techniques are confronted with challenges in complex soil structures, non-metallic targets, or low-conductivity minerals. Analog metal detection gear is also short of automation and real-time classification features.
+Conventional metal detection systems primarily rely on Very Low Frequency (VLF) or Pulse Induction (PI) techniques to identify sub-surface metallic objects based on electromagnetic response. However, these techniques are challenged by complex soil conditions and non-metallic interference, and they lack intelligent classification capabilities [1]. Salah and Shabaneh addressed this by designing a cost-effective metal detection system that can be embedded in low-resource environments [2].
 
-Previous research [1][2] has discussed how metal sensors could be integrated with IoT modules for remote monitoring and logging. The systems generally do not use smart classification, and sensor readings are not immune to environmental noise-induced false alarms.
+To overcome the limitations of traditional detectors, researchers have explored vision-based metal identification. Önal et al. proposed a machine learning approach to classify metallic minerals from image data, achieving promising results on a static dataset [3]. Our project extends this by implementing a CNN model for real-time inference using a downward-facing camera on a mobile rover.
 
-2. Vision-Based Metal Identification
-To mitigate VLF/PI limitations, vision-based solutions have been suggested. Image classification methods have been utilized to classify metal types based on surface textures and colors. Deep learning techniques like Convolutional Neural Networks (CNNs) are superior to conventional image processing in classification.
+For navigation and autonomous exploration, various sensing technologies like IR, ultrasonic, and LiDAR have been employed. Liu et al. reviewed these methods in indoor mobile robots, highlighting IR and ultrasonic sensors as cost-effective solutions for short-range obstacle detection [4]. Zhao and Li also proposed a robot that uses deep learning for real-time obstacle avoidance in unknown environments [5], demonstrating how AI-driven logic can enhance autonomy in robotic systems.
 
-In [3], a CNN model was trained using a metallic mineral dataset and was demonstrated to be capable of performing high accuracy in the copper, iron, and aluminum image classification. The research was restricted to static datasets and did not entail real-time applications on embedded systems.
+Deployment of CNNs on embedded platforms has seen progress in recent years. Ahmed and Echi developed a system for real-time object detection using surveillance cameras powered by AI models [6]. Vieira et al. extended this work to embedded devices like Raspberry Pi, showcasing CNN inference for violence recognition using low-power systems [7]. This validates our approach of optimizing CNN models (e.g., ResNet50V2, EfficientNet) for mineral classification on Raspberry Pi or an offloaded system.
 
-Our work extends this by capturing photos with a bottom-facing USB webcam on a mobile robot to allow real-time processing with trained CNN models on edge devices.
+While individual works have focused on either metal detection, mineral classification, or autonomous navigation, few have combined all three into a unified mobile system. Our project bridges this gap by integrating terrain exploration, real-time mineral detection, and intelligent navigation into one low-cost embedded platform.
 
-3. Autonomous Robot Exploration
-Autonomous ground robots have been exhaustively researched in search and rescue, agriculture, and exploration contexts. Algorithms such as A* search, frontier-based exploration, and zig-zag traversal have been typically utilized for comprehensive area coverage.
+References
+M. Šimić, D. Ambruš, and V. Bilas, IEEE Sensors Lett., vol. 7, no. 9, pp. 1–4, 2023.
 
-For obstacle detection, studies most frequently employ IR sensors, ultrasonic sensors, or LiDAR. A Raspberry Pi-based robot employed IR and ultrasonic sensing for indoor navigation in unknown environments in [4]. Such systems, however, generally do not incorporate object classification modules.
+W. A. Salah and A. A. A. Shabaneh, Bull. Electr. Eng. Inform., vol. 13, no. 5, pp. 3100–3111, 2024.
 
-Our solution combines both: terrain coverage exploration algorithm and CNN-based mineral detection, making it dual-use.
+M. K. Önal, E. Avci, F. Özyurt, and A. Orhan, Proc. SIU, pp. 1–4, 2020.
 
-4. CNN + Embedded Inference Systems
+Y. Liu, S. Wang, Y. Xie, T. Xiong, and M. Wu, Sensors, vol. 24, no. 4, Art. 1222, 2024.
 
-Deployment of CNN models on Raspberry Pi under resource-constrained settings has been considered in [5], where authors optimized TensorFlow models with TFLite and minimized inference times. Though suitable for small models, large CNNs need external computation or model pruning.
+D. Zhao and Y.-P. Li, Proc. IEEE IAAI, pp. 166–171, 2020.
 
-In our setup, we trade model complexity and performance with a ResNet50V2-based model or EfficientNet, tuned for inference on a laptop (originally), and subsequently ported to the Pi via quantization methods.
+A. A. Ahmed and M. Echi, IEEE Access, vol. 9, pp. 63283–63293, 2021.
 
-5. Limitations of Existing Research While individual metal detection, terrain exploration, and image classification have been discussed in existing studies, few of the systems incorporate all these aspects into a solution. Most of the solutions offered are static (tested on datasets) or employ traditional sensor-based detection methods lacking much intelligence.
+J. C. Vieira et al., IEEE Access, vol. 10, pp. 25190–25202, 2022.
