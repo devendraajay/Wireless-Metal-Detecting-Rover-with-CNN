@@ -130,19 +130,3 @@ Indoor Testing: Verified object detection, image capture, movement on tile floor
 Outdoor Testing: Rover was deployed with solar power in semi-autonomous mode.
 
 Manual Mode: Used when obstacle detection fails or terrain is unpredictable.
-
-7. Final Enhancements and Future Scope
-Servo-mounted ultrasonic sensor tested for sweep scanning.
-
-CNN model optimization with TensorFlow Lite planned for embedded deployment.
-
-Future upgrades:
-
-A* path planning
-
-Grid mapping
-
-Return-to-start functionality
-
-Remote auto-classification map export
-
