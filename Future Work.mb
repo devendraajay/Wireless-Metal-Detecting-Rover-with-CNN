@@ -1,0 +1,38 @@
+Future Work
+While the current implementation achieves its core objectives, several enhancements can be considered for future improvements:
+
+Autonomous Exploration and Mapping
+
+Integrate path planning algorithms like A* or Dijkstra for fully autonomous exploration.
+
+Add SLAM (Simultaneous Localization and Mapping) for dynamic map generation of detected minerals.
+
+Model Optimization for Edge Devices
+
+Convert the CNN model to TensorFlow Lite or ONNX for faster and more efficient on-board inference.
+
+Apply quantization and pruning to reduce model size and inference latency.
+
+Hardware Expansion
+
+Add GPS and compass modules for outdoor geolocation tagging of detected minerals.
+
+Upgrade to LiDAR or ToF sensors for better spatial awareness in uneven terrains.
+
+Multi-Class and Hierarchical Classification
+
+Improve classification performance using larger datasets, ensemble models, or attention-based CNNs.
+
+Introduce confidence thresholds to reduce false positives and support human-in-the-loop review.
+
+Wireless Communication & Data Sync
+
+Integrate cloud storage (e.g., Firebase, AWS) to upload detected data in real-time.
+
+Add SMS or email alerts when high-value minerals (e.g., gold, copper) are detected.
+
+Deployment and Durability
+
+Improve chassis design for outdoor rugged terrain.
+
+Use waterproof casing for electronics and camera stabilization systems.
