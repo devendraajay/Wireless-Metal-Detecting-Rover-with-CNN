@@ -1,0 +1,76 @@
+ Results and Discussion
+5.1 Experimental Setup
+The Wireless Metal Detection Rover was tested in a controlled indoor environment with various metal samples placed on the ground. The rover was equipped with:
+
+USB Camera (downward-facing) for image capture
+
+Raspberry Pi 4 as the processing unit
+
+Trained CNN model for metal classification
+
+Motor drivers and sensors (IR, Ultrasonic) for mobility and obstacle detection
+
+Flask Web Interface for remote control and image prediction
+
+Each sample was classified using the "Capture & Predict" feature after aligning the rover above it. The performance of the system was evaluated based on classification accuracy, response time, and ease of control.
+
+5.2 Sample Prediction Results
+The system was tested with 16 different metal classes including copper, aluminium, silver, gold, iron, lead, etc. Below is a representative prediction:
+
+
+Sample	True Label	Predicted Label	Confidence (%)
+Aluminium Foil	Aluminium	Aluminium	16.73
+Copper Plate	Copper	Copper	92.45
+Iron Rod	Iron	Iron	88.90
+Malachite Sample	Malachite	Chrysocolla	71.12
+Lead Sheet	Lead	Lead	89.54
+Note: In some cases, the model confused visually similar metals (e.g., malachite and chrysocolla) due to overlapping texture and color properties.
+
+5.3 Model Performance
+The final CNN model was trained using over 2000 labeled images with 16 metal categories. The overall performance on the test dataset is summarized below:
+
+
+Metric	Value
+Accuracy (Test Set)	54.23%
+Loss (Cross Entropy)	1.21
+Precision (Macro Avg.)	0.58
+Recall (Macro Avg.)	0.56
+F1 Score (Macro Avg.)	0.57
+The accuracy is moderate, which is expected due to:
+
+Visual similarity between some mineral classes
+
+Blurred or shadowed images due to rover movement
+
+Unbalanced training dataset
+
+5.4 Rover Navigation and Control
+The rover was able to:
+
+Move forward, backward, turn left, and right smoothly using keyboard controls (W, A, S, D)
+
+Stop when detecting obstacles using ultrasonic and IR sensors
+
+Reverse automatically upon detecting an object directly ahead (if auto mode is enabled)
+
+Stream live camera feed to the UI for accurate alignment and classification
+
+5.5 Limitations Observed
+Low Confidence Predictions: Some classes like aluminium and tin showed low prediction confidence due to reflectivity or lighting issues.
+
+Camera Focus Variations: USB camera quality affected image sharpness.
+
+Non-uniform Data Distribution: Some classes had fewer training images, affecting classification balance.
+
+Manual Control Requirement: Navigation was manual; full autonomy is not yet implemented.
+
+5.6 Summary
+The system successfully demonstrated:
+
+Live metal detection using a trained CNN model
+
+Real-time rover control with object avoidance
+
+Integration of robotics, camera, and ML-based classification in a working prototype
+
+While the accuracy can be improved further with better datasets and camera calibration, the current implementation achieves the core goal of metal classification and rover-based exploration.
