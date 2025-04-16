@@ -1,0 +1,6 @@
+Conclusion
+The proposed project successfully demonstrates the development of a low-cost, intelligent wireless metal detection rover capable of navigating unknown environments and performing real-time mineral classification using deep learning.
+
+By integrating sensors (IR, ultrasonic), cameras, and a Raspberry Pi, the rover performs both autonomous obstacle avoidance and mineral detection. A downward-facing USB camera captures terrain images, which are classified using a trained Convolutional Neural Network (CNN). A web-based Flask interface allows remote control, live video streaming, and trigger-based image classification. The results are logged systematically, ensuring reliable data collection for analysis.
+
+The integration of embedded computer vision with real-time movement control validates the feasibility of deploying such systems for low-cost geological surveys, mining exploration, and educational robotics. The modular structure of the system also makes it scalable and extensible for other AI-based tasks.
